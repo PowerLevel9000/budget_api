@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_cashin: false
+  amount: 1
+  date: 2023-10-08
+  description: MyText
+  category: one
+
+two:
+  is_cashin: false
+  amount: 1
+  date: 2023-10-08
+  description: MyText
+  category: two

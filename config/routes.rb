@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:create, :update] do
     resources :categories, only: [:index, :create, :update, :destroy]
+    resources :expenses, only: [:index, :create, :update, :destroy] 
   end
   post '/login', to: 'users#login'
 end
