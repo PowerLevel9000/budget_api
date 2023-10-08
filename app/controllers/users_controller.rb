@@ -25,6 +25,15 @@ class UsersController < ApplicationController
             render json:{error: user.errors, massage: "Somthing went Wrong" }, status: :unprocessable_entity
         end
       end
+
+      def destroy
+        user = User.find(params[:id])
+        if user.destroy
+          render json: {massage: "Account has been deleted see you soon"}, status: :created
+        else
+            render json:{error: user.errors, massage: "Somthing went Wrong" }, status: :unprocessable_entity
+        end
+      end
     
       private
     

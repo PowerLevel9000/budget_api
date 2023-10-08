@@ -23,6 +23,15 @@ class ExpensesController < ApplicationController
         end
     end
 
+    def destroy
+        @expense = Expense.find(params[:id])
+        if @expense.destroy
+            render json: {message: "expense deleted successfuly"}
+        else
+            render json: {error: @expense.errors.messages, messages: "error in deleting expense"}, status: 422
+        end
+    end
+
     private
 
     def expense_params

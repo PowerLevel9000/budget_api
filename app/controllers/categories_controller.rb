@@ -23,6 +23,15 @@ class CategoriesController < ApplicationController
         end
     end
 
+    def destroy
+        @category = Category.find(params[:id])
+        if @category.destroy
+            render json: {message: "category deleted successfuly"}
+        else
+            render json: {error: @category.errors.messages, messages: "error in deleting category"}, status: 422
+        end
+    end
+
     private
 
     def category_params
